@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MessageSquare, Send } from "lucide-react";
+import { Mail, MessageSquare, Send, Facebook, Instagram } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -119,7 +119,7 @@ const Contact = () => {
                         <div>
                           <h3 className="font-semibold mb-1">Email Us</h3>
                           <p className="text-sm text-muted-foreground">
-                            info@asusuigboamaka.org
+                            asusuigboamakaonline@gmail.com
                           </p>
                         </div>
                       </div>
@@ -129,20 +129,46 @@ const Contact = () => {
                   <Card className="border-secondary/20">
                     <CardContent className="pt-6">
                       <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                          <MessageSquare className="h-5 w-5 text-secondary" />
+                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Facebook className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <h3 className="font-semibold mb-1">Connect</h3>
-                          <p className="text-sm text-muted-foreground">
-                            Join our community and share your language preservation journey
-                          </p>
+                          <h3 className="font-semibold mb-1">Facebook</h3>
+                          <a 
+                            href="https://facebook.com/Asusuigboamakaonline" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            @Asusuigboamakaonline
+                          </a>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
 
-                  <div className="bg-gradient-to-br from-accent/10 to-accent/5 p-6 rounded-lg">
+                  <Card className="border-accent/20">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Instagram className="h-5 w-5 text-accent" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold mb-1">Instagram</h3>
+                          <a 
+                            href="https://instagram.com/Asusuigboamaka" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                          >
+                            @Asusuigboamaka
+                          </a>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 p-6 rounded-lg">
                     <p className="text-sm text-muted-foreground italic">
                       "Igbo kwenu! Let's work together to ensure our children grow up speaking the language of our ancestors."
                     </p>
@@ -213,7 +239,7 @@ const Contact = () => {
                         <Button
                           type="submit"
                           size="lg"
-                          className="w-full shadow-warm"
+                          className="w-full shadow-warm text-primary-foreground"
                           disabled={isSubmitting}
                         >
                           {isSubmitting ? "Sending..." : "Send Message"}
