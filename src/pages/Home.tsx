@@ -35,7 +35,7 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom duration-700 delay-300">
                 <Button 
                   size="lg" 
-                  className="bg-white text-primary hover:bg-white/90 shadow-warm"
+                  className="bg-white text-primary shadow-warm"
                   asChild
                 >
                   <a href="/about">Learn Our Story</a>
@@ -43,7 +43,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-white text-white hover:bg-white/90 hover:text-primary"
+                className="border-white text-white"
                 asChild
               >
                 <a href="/contact">Get in Touch</a>
