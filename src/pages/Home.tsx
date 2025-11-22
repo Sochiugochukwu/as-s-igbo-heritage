@@ -43,7 +43,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-white text-red-600 hover:bg-white/10 hover:text-red-600"
+                className="border-white text-white hover:bg-white/90 hover:text-primary"
                 asChild
               >
                 <a href="/contact">Get in Touch</a>
