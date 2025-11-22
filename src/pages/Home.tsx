@@ -40,14 +40,14 @@ const Home = () => {
                 >
                   <a href="/about">Learn Our Story</a>
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="border-white text-white hover:bg-white/10"
-                  asChild
-                >
-                  <a href="/contact">Get in Touch</a>
-                </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-white text-red-600 hover:bg-white/10 hover:text-red-600"
+                asChild
+              >
+                <a href="/contact">Get in Touch</a>
+              </Button>
               </div>
             </div>
           </div>
