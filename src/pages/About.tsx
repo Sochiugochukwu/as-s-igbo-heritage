@@ -10,13 +10,15 @@ const About = () => {
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
-          <div className="container mx-auto px-4">
+        <section className="relative py-24 bg-gradient-to-br from-primary/20 via-accent/10 to-secondary/20 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(234,179,8,0.1),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(10,65,53,0.1),transparent_50%)]" />
+          <div className="container mx-auto px-4 relative">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
                 Our Story & Mission
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl md:text-2xl text-muted-foreground font-medium">
                 Understanding the urgency of language preservation in the diaspora
               </p>
             </div>
@@ -36,9 +38,37 @@ const About = () => {
                 />
               </div>
 
+              {/* Founder Section */}
+              <Card className="border-accent/30 bg-gradient-to-br from-accent/5 via-primary/5 to-accent/5 shadow-xl">
+                <CardContent className="pt-8 pb-8">
+                  <div className="text-center mb-6">
+                    <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
+                      <span className="text-accent font-semibold text-sm uppercase tracking-wide">Founder & Visionary</span>
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary">Njideka Austin-Okafor</h2>
+                    <p className="text-lg text-accent font-medium">From Anambra State, Nigeria</p>
+                  </div>
+                  
+                  <div className="prose prose-lg max-w-none">
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                      Njideka's journey embodies the bridge between tradition and modernity, between homeland and diaspora. Her path began at the prestigious Queens College in Enugu, where the seeds of her passion for education and cultural preservation were first planted. She pursued Political Science at the University of Nigeria, Nsukka, deepening her understanding of identity, community, and the forces that shape societies.
+                    </p>
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                      Her academic journey continued with a Master's degree in Managerial Psychology from the University of Lagos, equipping her with insights into human behavior and the psychological dimensions of cultural identity. Following her marriage, Njideka relocated to the United States, where she experienced firsthand the challenges and opportunities of maintaining cultural heritage in the diaspora.
+                    </p>
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                      It was in the diaspora that Njideka's mission crystallized. Witnessing the gradual erosion of Asụsụ Igbo among younger generations—including within her own community—she recognized an urgent need for action. She understood that language is not merely a tool for communication, but the very essence of cultural identity, the vessel that carries our proverbs, our wisdom, and our unique worldview.
+                    </p>
+                    <p className="text-lg font-semibold text-primary leading-relaxed">
+                      Asusuigboamaka was born from this profound conviction: that whether in the heart of Igboland or in cities across the world, every Igbo person deserves the opportunity to connect with their linguistic heritage. Through this platform, Njideka is building a movement—a global community committed to ensuring that the beautiful language of our ancestors continues to thrive for generations to come.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
               {/* Content Blocks */}
-              <div className="space-y-8">
-                <Card className="border-primary/20">
+              <div className="space-y-8 mt-12">
+                <Card className="border-primary/30 shadow-lg hover:shadow-xl transition-shadow">
                   <CardContent className="pt-6">
                     <h2 className="text-2xl font-bold mb-4 text-primary">The Challenge We Face</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed mb-4">
@@ -50,7 +80,7 @@ const About = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-secondary/20">
+                <Card className="border-secondary/30 shadow-lg hover:shadow-xl transition-shadow">
                   <CardContent className="pt-6">
                     <h2 className="text-2xl font-bold mb-4 text-secondary">Why Language Matters</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed mb-4">
@@ -65,7 +95,7 @@ const About = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-accent/20">
+                <Card className="border-accent/30 shadow-lg hover:shadow-xl transition-shadow">
                   <CardContent className="pt-6">
                     <h2 className="text-2xl font-bold mb-4 text-accent">Our Vision</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed mb-4">
@@ -80,7 +110,7 @@ const About = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5">
+                <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 shadow-lg hover:shadow-xl transition-shadow">
                   <CardContent className="pt-6">
                     <h2 className="text-2xl font-bold mb-4">A Personal Commitment</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed mb-4">
