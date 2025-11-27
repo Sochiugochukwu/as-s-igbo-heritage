@@ -7,7 +7,7 @@ import heroImage from "@/assets/hero-igbo.jpg";
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-transparent">
       <Navigation />
       
       <main className="flex-grow">
@@ -54,10 +54,11 @@ const Home = () => {
         </section>
 
         {/* Mission Section */}
-        <section className="py-20 bg-gradient-to-b from-background to-muted/30">
-          <div className="container mx-auto px-4">
+        <section className="py-16 md:py-24 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-transparent" />
+          <div className="container mx-auto px-4 relative">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
                 Why Preserve Asụsụ Igbo?
               </h2>
               <p className="text-lg text-muted-foreground">
@@ -65,8 +66,8 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-warm">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              <Card className="border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-xl bg-white/80 backdrop-blur-sm">
                 <CardContent className="pt-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                     <Heart className="h-6 w-6 text-primary" />
@@ -78,7 +79,7 @@ const Home = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover:shadow-warm">
+              <Card className="border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover:shadow-xl bg-white/80 backdrop-blur-sm">
                 <CardContent className="pt-6">
                   <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
                     <BookOpen className="h-6 w-6 text-secondary" />
@@ -90,7 +91,7 @@ const Home = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-warm">
+              <Card className="border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-xl bg-white/80 backdrop-blur-sm">
                 <CardContent className="pt-6">
                   <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4">
                     <Users className="h-6 w-6 text-accent" />
@@ -106,9 +107,10 @@ const Home = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="py-20 bg-gradient-to-r from-primary to-accent text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <section className="py-16 md:py-24 bg-gradient-to-r from-primary via-accent to-secondary text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)]" />
+          <div className="container mx-auto px-4 text-center relative">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Join Us in This Important Mission
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-95">

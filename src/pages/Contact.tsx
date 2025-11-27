@@ -1,253 +1,149 @@
-import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
-import { Mail, MessageSquare, Send, Facebook, Instagram } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Mail, Facebook, Instagram, Globe } from "lucide-react";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Validation
-    if (!formData.name.trim()) {
-      toast({
-        title: "Name required",
-        description: "Please enter your name.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    if (!formData.email.trim() || !validateEmail(formData.email)) {
-      toast({
-        title: "Valid email required",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    if (!formData.subject.trim()) {
-      toast({
-        title: "Subject required",
-        description: "Please enter a subject.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    if (!formData.message.trim()) {
-      toast({
-        title: "Message required",
-        description: "Please enter your message.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. We'll get back to you soon.",
-      });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                Get in Touch
+        <section className="py-16 md:py-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10" />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground animate-in fade-in slide-in-from-bottom duration-700">
+                Connect With Us
               </h1>
-              <p className="text-xl text-muted-foreground">
-                We'd love to hear from you. Whether you have questions, suggestions, or just want to share your story, please reach out.
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-bottom duration-700 delay-150">
+                Join our community and stay connected. Follow us on social media to get the latest updates, resources, and inspiration for preserving Asụsụ Igbo.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Contact Form Section */}
-        <section className="py-20">
+        {/* Social Media Section */}
+        <section className="py-12 md:py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Contact Info */}
-                <div className="space-y-6">
-                  <Card className="border-primary/20">
-                    <CardContent className="pt-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                          <Mail className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1">Email Us</h3>
-                          <p className="text-sm text-muted-foreground">
-                            asusuigboamakaonline@gmail.com
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                  Find Us On Social Media
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Follow us, share your journey, and be part of our growing community
+                </p>
+              </div>
 
-                  <Card className="border-secondary/20">
-                    <CardContent className="pt-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                          <Facebook className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1">Facebook</h3>
-                          <a 
-                            href="https://facebook.com/Asusuigboamakaonline" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                          >
-                            @Asusuigboamakaonline
-                          </a>
-                        </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                {/* Email Card */}
+                <Card className="border-primary/30 hover:border-primary/50 transition-all duration-300 hover:shadow-xl group">
+                  <CardContent className="p-8">
+                    <div className="flex flex-col items-center text-center space-y-4">
+                      <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Mail className="h-8 w-8 md:h-10 md:w-10 text-primary" />
                       </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-accent/20">
-                    <CardContent className="pt-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
-                          <Instagram className="h-5 w-5 text-accent" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-1">Instagram</h3>
-                          <a 
-                            href="https://instagram.com/Asusuigboamaka" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-sm text-muted-foreground hover:text-accent transition-colors"
-                          >
-                            @Asusuigboamaka
-                          </a>
-                        </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold mb-2 text-foreground">Email Us</h3>
+                        <a 
+                          href="mailto:asusuigboamakaonline@gmail.com"
+                          className="text-base md:text-lg text-primary hover:text-primary/80 transition-colors font-medium"
+                        >
+                          asusuigboamakaonline@gmail.com
+                        </a>
+                        <p className="text-sm text-muted-foreground mt-3">
+                          Send us your questions, suggestions, or stories
+                        </p>
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </CardContent>
+                </Card>
 
-                  <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 p-6 rounded-lg">
-                    <p className="text-sm text-muted-foreground italic">
+                {/* Facebook Card */}
+                <Card className="border-secondary/30 hover:border-secondary/50 transition-all duration-300 hover:shadow-xl group">
+                  <CardContent className="p-8">
+                    <div className="flex flex-col items-center text-center space-y-4">
+                      <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-500/20 to-blue-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Facebook className="h-8 w-8 md:h-10 md:w-10 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold mb-2 text-foreground">Facebook</h3>
+                        <a 
+                          href="https://facebook.com/Asusuigboamakaonline" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-base md:text-lg text-blue-600 hover:text-blue-700 transition-colors font-medium"
+                        >
+                          @Asusuigboamakaonline
+                        </a>
+                        <p className="text-sm text-muted-foreground mt-3">
+                          Join our community and engage with daily content
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Instagram Card */}
+                <Card className="border-accent/30 hover:border-accent/50 transition-all duration-300 hover:shadow-xl group">
+                  <CardContent className="p-8">
+                    <div className="flex flex-col items-center text-center space-y-4">
+                      <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-pink-500/20 to-purple-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Instagram className="h-8 w-8 md:h-10 md:w-10 text-pink-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold mb-2 text-foreground">Instagram</h3>
+                        <a 
+                          href="https://instagram.com/Asusuigboamaka" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-base md:text-lg text-pink-600 hover:text-pink-700 transition-colors font-medium"
+                        >
+                          @Asusuigboamaka
+                        </a>
+                        <p className="text-sm text-muted-foreground mt-3">
+                          Follow us for visual stories and language tips
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Website Card */}
+                <Card className="border-primary/30 hover:border-primary/50 transition-all duration-300 hover:shadow-xl group">
+                  <CardContent className="p-8">
+                    <div className="flex flex-col items-center text-center space-y-4">
+                      <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Globe className="h-8 w-8 md:h-10 md:w-10 text-accent" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold mb-2 text-foreground">Our Website</h3>
+                        <p className="text-base md:text-lg text-accent font-medium">
+                          www.asusuigboamaka.com
+                        </p>
+                        <p className="text-sm text-muted-foreground mt-3">
+                          Explore our resources and learn more about our mission
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Quote Section */}
+              <div className="mt-12 md:mt-16">
+                <Card className="bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 border-primary/20">
+                  <CardContent className="p-8 md:p-12 text-center">
+                    <p className="text-xl md:text-2xl text-foreground font-medium italic mb-4">
                       "Igbo kwenu! Let's work together to ensure our children grow up speaking the language of our ancestors."
                     </p>
-                  </div>
-                </div>
-
-                {/* Contact Form */}
-                <div className="lg:col-span-2">
-                  <Card className="shadow-warm">
-                    <CardHeader>
-                      <CardTitle className="flex items-center space-x-2">
-                        <Send className="h-5 w-5 text-primary" />
-                        <span>Send Us a Message</span>
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <form onSubmit={handleSubmit} className="space-y-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="name">Name *</Label>
-                          <Input
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            placeholder="Your full name"
-                            required
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="email">Email *</Label>
-                          <Input
-                            id="email"
-                            name="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="your.email@example.com"
-                            required
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="subject">Subject *</Label>
-                          <Input
-                            id="subject"
-                            name="subject"
-                            value={formData.subject}
-                            onChange={handleChange}
-                            placeholder="What is your message about?"
-                            required
-                          />
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="message">Message *</Label>
-                          <Textarea
-                            id="message"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            placeholder="Share your thoughts, questions, or story with us..."
-                            rows={6}
-                            required
-                          />
-                        </div>
-
-                        <Button
-                          type="submit"
-                          size="lg"
-                          className="w-full shadow-warm text-primary-foreground"
-                          disabled={isSubmitting}
-                        >
-                          {isSubmitting ? "Sending..." : "Send Message"}
-                        </Button>
-                      </form>
-                    </CardContent>
-                  </Card>
-                </div>
+                    <p className="text-muted-foreground font-semibold">
+                      — Asusuigboamaka Community
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
